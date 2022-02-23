@@ -1,0 +1,22 @@
+{% block content %}
+
+<form action="add_arguments_to_db" method="post">
+    {% csrf_token %}
+
+    {% for arg in arguments %}
+    <p><label for="{{ arg }}">{{ arg }}</label>
+    <input id="{{ arg }}" type="text" name="{{ arg }}"></p>
+    {% endfor %}
+
+    <button type="submit">Submit</button>
+</form>
+
+<form method="post">
+        {% csrf_token %}
+
+        {{ extra_arg_form }}
+
+        <button type="submit">Add extra argument</button>
+</form>
+
+{% endblock %}

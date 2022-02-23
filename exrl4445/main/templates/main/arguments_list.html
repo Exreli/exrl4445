@@ -1,0 +1,8 @@
+{% block content %}
+
+{% for arg in arguments %}
+    <p>ID: {{ arg.id }}</p>
+    <p>JSON: {{ arg.arguments }}</p>
+{% endfor %}
+
+{% endblock %}
